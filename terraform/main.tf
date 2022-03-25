@@ -13,7 +13,7 @@ module "sandbox" {
   control_tower_parameters = {
     AccountEmail              = "${each.key}@gmail.com"
     AccountName               = split("+", each.key)[0]
-    ManagedOrganizationalUnit = "Learn AFT"
+    ManagedOrganizationalUnit = "Sandbox"
     SSOUserEmail              = "jkrusic19@gmail.com"
     SSOUserFirstName          = "Sandbox"
     SSOUserLastName           = "AFT"
