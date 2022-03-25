@@ -1,7 +1,6 @@
 locals {
   account_name = [
-    "sbx1+jkrusic19",
-    "sbx2+jkrusic19"
+    "sbx3+jkrusic19"
   ]
 
 
