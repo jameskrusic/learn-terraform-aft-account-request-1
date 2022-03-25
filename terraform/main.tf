@@ -1,12 +1,18 @@
 locals {
-  account_name = "sbx-jkrusic19@gmail.com"
+  account_name = [
+    "sbx1+jkrusic19",
+    "sbx2+jkrusic19"
+  ]
+
+
 }
 module "sandbox" {
+  for_each = toset(local.account_name)
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
-    AccountEmail              = local.account_name
-    AccountName               = local.account_name
+    AccountEmail              = "${each.key}@gmail.com"
+    AccountName               = split("+", each.key)[0]
     ManagedOrganizationalUnit = "Learn AFT"
     SSOUserEmail              = "jkrusic19@gmail.com"
     SSOUserFirstName          = "Sandbox"
